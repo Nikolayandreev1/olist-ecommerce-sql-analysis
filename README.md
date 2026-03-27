@@ -1,109 +1,111 @@
-E-commerce SQL Analytics (Olist)
+# E-commerce Analytics Dashboard (Olist)
 
+This project presents an end-to-end e-commerce analytics solution using SQL and Power BI.
+The goal is to analyze business performance, customer behavior, and retention patterns using real-world transactional data.
 
+---
 
-This project explores an e-commerce dataset (Olist) using SQL to analyze business performance, customer behavior, and retention.
+## Project Overview
 
+The project simulates real-world analytics tasks, including:
 
+* KPI analysis (GMV, AOV, total orders)
+* Customer behavior analysis
+* Product and category performance
+* Cohort-based retention analysis
 
+---
 
+## Tools & Technologies
 
+* PostgreSQL
+* SQL (CTEs, joins, window functions)
+* DBeaver
+* Power BI
 
+---
 
-Project Overview
+## Project Structure
 
 
+ sql/
+   schema.sql               # Database schema
+   import.sql               # Data loading
+   01_data_checks.sql       # Data validation
+   02_kpi_analysis.sql      # Revenue, AOV, orders
+   03_product_analysis.sql  # Category & product insights
+   04_customer_analysis.sql # Customer behavior
+   05_cohort_analysis.sql   # Retention analysis
+   06_payments_analysis.sql # Payment insights
+ 
+  dashboard/
+        ecommerce_dashboard.pbix
+ 
+  images/
+        overview.png
+        categories.png
+        cohort.png
 
-The goal of this project is to extract insights from transactional data and simulate real-world analytics tasks such as:
+  data/
+    cohort_long_table.csv
+ 
+  README.md
 
 
+---
 
-\-KPI analysis
+## Key Insights
 
-\-Customer behavior analysis
+* Most customers make only one purchase
+* Repeat purchase rate is extremely low (~3%)
+* Retention drops sharply after the first month (<1%)
+* No improvement in retention across cohorts over time
+* Revenue is concentrated in a few product categories
 
-\-Product performance analysis
+---
 
-\-Cohort retention analysis
+## Cohort Analysis
 
+Customers are grouped by the month of their first purchase, and their activity is tracked over time.
 
+Key findings:
 
+* Retention drops significantly after the first month
+* Long-term retention is nearly zero
+* Customers rarely return after their first purchase
 
+This suggests that the business relies heavily on customer acquisition rather than retention.
 
+---
 
+## Business Interpretation
 
-Tools Used
+The analysis indicates a transactional business model with low customer loyalty.
+This opens opportunities for:
 
+* Loyalty programs
+* Personalized marketing
+* Retention-focused strategies
 
+---
 
-\-PostgreSQL
+## Next Steps
 
-\-SQL (CTEs, joins, window functions)
+* Enhance dashboard with additional KPIs
+* Add retention curve visualization
+* Implement customer segmentation (RFM analysis)
+* Improve storytelling and business recommendations
 
-\-DBeaver
+---
 
-\-Power BI (planned)
+## Project Goal
 
+This project demonstrates the ability to:
 
+* Write analytical SQL queries
+* Build end-to-end data analysis workflows
+* Translate data into business insights
+* Create interactive dashboards in Power BI
 
-
-
-
-
-&#x20;Project Structure
-
-
-
-\-schema.sql→ database schema
-
-\-import.sql→ data loading
-
-* 01\_data\_checks.sql → data validation
-* 02\_kpi\_analysis.sql → revenue, AOV, orders
-* 03\_product\_analysis.sql → category \& product insights
-* 04\_customer\_analysis.sql → repeat customers \& behavior
-* 05\_cohort\_analysis.sql → retention analysis
-* 06\_payments\_analysis.sql → payment insights
-
-
-
-
-
-
-
-Key Insights
-
-
-
-\- Most customers make only one purchase
-
-\- Repeat purchase rate is low (\~3%)
-
-\- Retention drops significantly after the first month
-
-\- Revenue is concentrated in a few product categories
-
-
-
-
-
-Cohort Analysis
-
-
-
-Customers are grouped by the month of their first purchase, and their activity is tracked over time to measure retention.
-
-
-
-
-
-Next Steps
-
-
-
-\- Build Power BI dashboard
-
-\- Add visualizations
-
-\- Improve business insights
+---
 
